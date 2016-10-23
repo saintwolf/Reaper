@@ -16,16 +16,9 @@ public class ReaperCraftPlugin {
         Player player = event.getTargetEntity();
         player.getInventory().clear();
         
-        Text text = Text.of("Reaper: Someone has died!");
+        Text text = Text.of("Reaper: Cleared" + player.getName() + "'s inventory!");
         MessageChannel broadcastChannel = MessageChannel.TO_ALL;
         broadcastChannel.send(this, text);
     }
-	
-	@Listener
-	public void onConnect(ClientConnectionEvent.Join event) {
-		Text text = Text.of("Reaper: Someone has connected!");
-        MessageChannel broadcastChannel = MessageChannel.TO_ALL;
-        broadcastChannel.send(this, text);
-	}
 
 }
